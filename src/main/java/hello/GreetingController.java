@@ -15,6 +15,6 @@ public class GreetingController{
 	@RequestMapping("/greeting")
 	public Greeting greeting(@RequestParam(value="name", defaultValue="Worlds") String name){
 		//date = new Date()
-		return new Greeting(counter.incrementAndGet(), String.format(template, name), date);
+		return new Greeting(counter.incrementAndGet(), String.format(template, name), date, (double)date.getSeconds() * 42.);
 	}
 }
